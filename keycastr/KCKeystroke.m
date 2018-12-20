@@ -51,7 +51,9 @@
 
 -(BOOL) isCommand
 {
-	return (_modifiers & (NSAlternateKeyMask | NSControlKeyMask | NSCommandKeyMask)) != 0;
+    return (
+            ((_modifiers & (NSAlternateKeyMask | NSControlKeyMask | NSCommandKeyMask)) != 0)
+            || (_keyCode == 49)); // 49 being space key
 }
 
 -(NSString*) convertToString
